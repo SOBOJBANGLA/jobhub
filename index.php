@@ -389,7 +389,7 @@ if(!empty($user_first_name)){
                                 <div class="col-md-8">
                                     <div class="job-info">
                                         <h3>
-                                            <a href="job-details.html"><?php echo $row['job_title'] ?></a>
+                                            <a href="job-details.php"><?php echo $row['job_title'] ?></a>
                                         </h3>
                                         <ul>                                          
                                             <li>
@@ -414,7 +414,7 @@ if(!empty($user_first_name)){
                                
                                 <div class="col-md-3">
                                     <div class="theme-btn text-end">
-                                        <a href="job-details.html" class="default-btn">
+                                        <a href="job_details.php?id=<?php echo $row['id']?>" class="default-btn">
                                             Browse Job
                                         </a>
                                     </div>
@@ -427,16 +427,7 @@ if(!empty($user_first_name)){
                     
 
                     
-                    <div class="col-lg-12">
-                        <div class="job-card-two">
-                            <div class="row align-items-center">
-                                <div class="col-md-1">
-                                    
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </section>

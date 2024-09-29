@@ -101,11 +101,11 @@ if (!empty($user_first_name) && !empty($user_last_name)) {
           if (isset($_POST['submit'])) {
             extract($_POST);
 
-            $sql =  "INSERT INTO vacancy (job_title, company_name, address, category,start_date,last_date,job_type,company_id,vacancy_count,category_count,catagory_id) 
-						   VALUES ( '$title', '$company_name', '$address', '$category','$s_date','$l_date','$job_type','$c_id','$v_count','$c_count','$category_id')";
+            $sql =  "INSERT INTO vacancy (job_title,salary, company_name, address, category,start_date,last_date,email,website,job_type,company_id,vacancy_count,category_count,catagory_id,description) 
+						   VALUES ( '$title','$salary' ,'$company_name', '$address', '$category','$s_date','$l_date','$email','$website','$job_type','$c_id','$v_count','$c_count','$category_id','$description')";
 
             if ($conn->query($sql) == TRUE) {
-              $succ = "Company Added";
+              $succ = "Job Added";
             } else {
               $err = "Please Try Again Later";
             }
@@ -277,7 +277,7 @@ if (!empty($user_first_name) && !empty($user_last_name)) {
 
                   <div class="col-md-6">
                     <label class="form-label">Salary (Optional)</label>
-                    <input type="number" class="form-control" placeholder="e.g. $20,000" required>
+                    <input type="text" class="form-control" name="salary" placeholder="e.g. $20,000" required>
 
                   </div>
 
@@ -313,7 +313,7 @@ if (!empty($user_first_name) && !empty($user_last_name)) {
 
                   <div class="col-md-12">
                     <label class="form-label">Job Description</label>
-                    <textarea class="form-control" placeholder="Job Description" rows="6" required></textarea>
+                    <textarea class="form-control" name="description" placeholder="Job Description" rows="6" required></textarea>
 
                   </div>
 

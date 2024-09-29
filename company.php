@@ -138,7 +138,7 @@ if(!empty($user_first_name)){
 									<?php echo $row['address'] ?>
 								</p>
                                 
-								<a href="job-list.html" class="company-btn">
+								<a href="job-list.php?company_id=<?php echo $row ['name'] ?>" class="company-btn">
                                 <?php echo $row['vacancy_count']." Open position"; ?>
 								</a>
 							</div>

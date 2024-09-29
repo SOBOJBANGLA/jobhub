@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2024 at 03:20 AM
+-- Generation Time: Sep 29, 2024 at 03:50 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -20,6 +20,41 @@ SET time_zone = "+00:00";
 --
 -- Database: `jobs`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `applicant`
+--
+
+CREATE TABLE `applicant` (
+  `id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `company_name` varchar(50) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `gender` varchar(30) NOT NULL,
+  `birth` date NOT NULL,
+  `education` varchar(50) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `contact` varchar(20) NOT NULL,
+  `experience` varchar(20) NOT NULL,
+  `skill` varchar(20) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `about` varchar(150) NOT NULL,
+  `resume` varchar(100) NOT NULL,
+  `photo` varchar(200) NOT NULL,
+  `status` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `applicant`
+--
+
+INSERT INTO `applicant` (`id`, `title`, `company_name`, `fname`, `lname`, `gender`, `birth`, `education`, `email`, `contact`, `experience`, `skill`, `address`, `about`, `resume`, `photo`, `status`) VALUES
+(1, 'As. Officer', 'Square LTD', 'Abdullah', 'Rashid', 'Male', '2024-09-24', 'Masters', 'mamun@gmail.com ', '45555665', '2', 'ddd', 'aaaaaaa', 'dddddd', 'resume/jQuery STC version.pdf', 'photo/man2.jpg', 'Approved'),
+(2, 'Junior oficer', 'Square LTD', 'Abdullah', 'sani', 'Male', '2024-09-11', 'Masters', 'abuhmdabdullah@gmail.com', '45555665', '2', 'ddd', 'fffff', 'ddddd', 'resume/jQuery STC version.pdf', 'photo/man4 (1).jpg', 'Pending'),
+(3, 'Manager', 'Candid Dealings ltd', 'Abdullah', 'Rashid', 'Male', '2024-09-24', 'S.S.C', 'abuhmdabdullah72@gmail.com', '45555', '2', 'qqq', 'bbbg', 'ffff', 'resume/DUTCH BANGLA.pdf', 'photo/man3 (1).jpg', 'Approved');
 
 -- --------------------------------------------------------
 
@@ -236,43 +271,51 @@ CREATE TABLE `vacancy` (
   `category` varchar(30) NOT NULL,
   `start_date` date NOT NULL DEFAULT current_timestamp(),
   `last_date` date NOT NULL DEFAULT current_timestamp(),
+  `email` varchar(30) NOT NULL,
   `website` varchar(30) NOT NULL,
   `job_type` varchar(20) NOT NULL,
   `company_id` int(11) NOT NULL,
   `vacancy_count` int(11) NOT NULL,
   `catagory_id` int(11) NOT NULL,
-  `category_count` int(11) NOT NULL
+  `category_count` int(11) NOT NULL,
+  `description` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `vacancy`
 --
 
-INSERT INTO `vacancy` (`id`, `job_title`, `salary`, `company_name`, `address`, `category`, `start_date`, `last_date`, `website`, `job_type`, `company_id`, `vacancy_count`, `catagory_id`, `category_count`) VALUES
-(20, 'Junior oficer', '', 'Square LTD', 'Dhaka', 'Accountacy', '2024-09-04', '2024-09-27', 'www.squre.com', '', 13, 0, 1, 0),
-(36, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Customer service', '2024-09-09', '2024-09-21', '', '', 2, 1, 1, 0),
-(37, 'Manager', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-23', '', '', 2, 1, 1, 0),
-(38, 'As. Officer', '', 'Square LTD', 'Dhaka', 'Accountacy', '2024-09-10', '2024-09-20', '', '', 13, 0, 1, 0),
-(41, 'As. Officer', '', 'Basundhara', 'Dhaka', 'Accountacy', '2024-09-10', '2024-09-17', '', '', 3, 1, 1, 0),
-(42, 'As. Officer', '', 'Basundhara', 'Dhaka', 'Bank', '2024-09-17', '2024-09-28', '', '', 3, 1, 3, 0),
-(45, 'Tellar', '', 'Dhanshiri Ltd', 'Dhaka', 'N.G.O', '2024-09-10', '2024-09-28', '', '1', 22, 1, 1, 8),
-(48, 'Junior operator', '', 'Nippon Ltd', 'Dhaka', 'Data entry', '2024-09-10', '2024-09-21', '', 'Full Time', 15, 1, 9, 1),
-(49, 'Junior operator', '', 'Csl ltd', 'Dhaka', 'Magement', '2024-09-15', '2024-09-21', '', 'Full Time', 32, 1, 10, 1),
-(50, 'As. Officer', '', 'Csl ltd', 'Dhaka', 'Accountacy', '2024-09-17', '2024-09-28', '', 'Full Time', 32, 1, 1, 1),
-(51, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-15', '2024-09-28', '', 'Full Time', 2, 1, 1, 1),
-(52, 'Tellar', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-08', '2024-09-26', '', 'Full Time', 2, 1, 1, 1),
-(53, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-10', '', 'Full Time', 2, 1, 1, 1),
-(54, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-10', '', 'Full Time', 2, 1, 1, 1),
-(55, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Hospitality', '2024-09-10', '2024-09-28', '', 'Full Time', 1, 1, 1, 1),
-(56, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-19', '2024-09-28', '', 'Full Time', 2, 1, 1, 1),
-(57, 'As. Officer', '', 'City', 'Dhaka', 'Agriculture', '2024-09-16', '2024-09-27', '', 'Full Time', 5, 1, 24, 1),
-(58, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Management', '2024-09-17', '2024-09-28', '', 'Full Time', 2, 1, 1, 1),
-(59, 'Assistant officer', '', 'Walton Ltd', 'Dhaka', 'Accountacy', '2024-09-18', '2024-09-27', '', 'Full Time', 69, 1, 1, 1),
-(67, 'General Manager', '', 'Huway Ltd', 'Dhaka', 'Law', '2024-09-22', '2024-09-30', '', 'Full Time', 70, 1, 28, 1);
+INSERT INTO `vacancy` (`id`, `job_title`, `salary`, `company_name`, `address`, `category`, `start_date`, `last_date`, `email`, `website`, `job_type`, `company_id`, `vacancy_count`, `catagory_id`, `category_count`, `description`) VALUES
+(20, 'Junior oficer', '', 'Square LTD', 'Dhaka', 'Accountacy', '2024-09-04', '2024-09-27', '', 'www.squre.com', '', 13, 0, 1, 0, ''),
+(36, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Customer service', '2024-09-09', '2024-09-21', '', '', '', 2, 1, 1, 0, ''),
+(37, 'Manager', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-23', '', '', '', 2, 1, 1, 0, ''),
+(38, 'As. Officer', '', 'Square LTD', 'Dhaka', 'Accountacy', '2024-09-10', '2024-09-20', '', '', '', 13, 0, 1, 0, ''),
+(45, 'Tellar', '', 'Dhanshiri Ltd', 'Dhaka', 'N.G.O', '2024-09-10', '2024-09-28', '', '', '1', 22, 1, 1, 8, ''),
+(48, 'Junior operator', '', 'Nippon Ltd', 'Dhaka', 'Data entry', '2024-09-10', '2024-09-21', '', '', 'Full Time', 15, 1, 9, 1, ''),
+(49, 'Junior operator', '', 'Csl ltd', 'Dhaka', 'Magement', '2024-09-15', '2024-09-21', '', '', 'Full Time', 32, 1, 10, 1, ''),
+(50, 'As. Officer', '', 'Csl ltd', 'Dhaka', 'Accountacy', '2024-09-17', '2024-09-28', '', '', 'Full Time', 32, 1, 1, 1, ''),
+(51, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-15', '2024-09-28', '', '', 'Full Time', 2, 1, 1, 1, ''),
+(52, 'Tellar', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-08', '2024-09-26', '', '', 'Full Time', 2, 1, 1, 1, ''),
+(53, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-10', '', '', 'Full Time', 2, 1, 1, 1, ''),
+(54, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-10', '', '', 'Full Time', 2, 1, 1, 1, ''),
+(55, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Hospitality', '2024-09-10', '2024-09-28', '', '', 'Full Time', 1, 1, 1, 1, ''),
+(56, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-19', '2024-09-28', '', '', 'Full Time', 2, 1, 1, 1, ''),
+(57, 'As. Officer', '', 'City', 'Dhaka', 'Agriculture', '2024-09-16', '2024-09-27', '', '', 'Full Time', 5, 1, 24, 1, ''),
+(58, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Management', '2024-09-17', '2024-09-28', '', '', 'Full Time', 2, 1, 1, 1, ''),
+(59, 'Assistant officer', '', 'Walton Ltd', 'Dhaka', 'Accountacy', '2024-09-18', '2024-09-27', '', '', 'Full Time', 69, 1, 1, 1, ''),
+(67, 'General Manager', '', 'Huway Ltd', 'Dhaka', 'Law', '2024-09-22', '2024-09-30', '', '', 'Full Time', 70, 1, 28, 1, ''),
+(68, 'As. Officer', '20000', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-25', '2024-09-28', 'candid@gmail.com', 'www.candid.com', 'Full Time', 2, 1, 1, 1, 'aaaaa'),
+(69, 'Executive', '20000', 'Basundhara Ltd', 'Dhaka', 'Accountacy', '2024-09-23', '2024-10-02', 'sm@gmail.com', 'www.squre.com', 'Full Time', 3, 1, 1, 1, 'ccccdd');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `applicant`
+--
+ALTER TABLE `applicant`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `category`
@@ -327,6 +370,12 @@ ALTER TABLE `vacancy`
 --
 
 --
+-- AUTO_INCREMENT for table `applicant`
+--
+ALTER TABLE `applicant`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
@@ -372,7 +421,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `vacancy`
 --
 ALTER TABLE `vacancy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

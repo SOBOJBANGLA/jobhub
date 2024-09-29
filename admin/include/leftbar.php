@@ -134,6 +134,25 @@
             <div class="parent-icon">
             <i class='fas fa-eye' style='font-size:24px'></i>
             </div>
+            <div class="menu-title">Applicant</div>
+          </a>
+          <ul>
+            <li><a href="applicant_info.php" class="text-decoration-none">
+                <ion-icon name="ellipse-outline"></ion-icon>Applicant 
+              </a>
+            </li>
+            <li><a href="decision_mange.php" class="text-decoration-none">
+                <ion-icon name="ellipse-outline"></ion-icon>Applicant Manage
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="javascript:;" class="has-arrow text-decoration-none">
+            <div class="parent-icon">
+            <i class='fas fa-eye' style='font-size:24px'></i>
+            </div>
             <div class="menu-title">Visitor</div>
           </a>
           <ul>
