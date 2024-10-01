@@ -134,7 +134,7 @@ if(!empty($user_first_name)){
 								<div class="col-lg-6">
 									<div class="job-info">
 										<h3>
-											<a href="job-details.php"><?php echo $row['job_title'] ?></a>
+											<a href="job_details.php?id=<?php echo $row['id']  ?>"><?php echo $row['job_title'] ?></a>
 										</h3>
 										<ul>
 											<li>Via <a href="#"><?php echo $row['company_name'] ?></a></li>

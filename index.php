@@ -165,7 +165,7 @@ if(!empty($user_first_name)){
                 
                 ?>
                     <div class="col-lg-3 col-md-4 col-sm-6">
-                        <a href="job-list.html">
+                        <a href="job-list_category.php?category_id=<?php echo $row ['name'] ?>">
                             <div class="category-card">
                                 <i class='flaticon-accounting'></i>
                                 <h3><?php echo $row['name'] ?></h3>
@@ -389,7 +389,7 @@ if(!empty($user_first_name)){
                                 <div class="col-md-8">
                                     <div class="job-info">
                                         <h3>
-                                            <a href="job-details.php"><?php echo $row['job_title'] ?></a>
+                                            <a href="job_details.php?id=<?php echo $row['id']  ?>"><?php echo $row['job_title'] ?></a>
                                         </h3>
                                         <ul>                                          
                                             <li>

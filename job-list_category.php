@@ -35,10 +35,10 @@ if(!empty($user_first_name)){
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <!-- Style CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
-		 <!-- Dark CSS -->
+		<!-- Dark CSS -->
 		<link rel="stylesheet" href="assets/css/dark.css">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="assets/css/responsive.css">
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="assets/css/responsive.css">
         <!-- Title CSS -->
         <title>Jobhub - Job Board & Portal HTML Template</title>
         <!-- Favicon -->
@@ -84,16 +84,15 @@ if(!empty($user_first_name)){
         <!-- Navbar Area End -->
 
         <!-- Page Title Start -->
-        <section class="page-title title-bg2">
-
+        <section class="page-title title-bg5">
             <div class="d-table">
                 <div class="d-table-cell">
-                    <h2>Find a Job</h2>
+                    <h2>Job List</h2>
                     <ul>
                         <li>
                             <a href="index.php">Home</a>
                         </li>
-                        <li>Find a Job</li>
+                        <li>Job List</li>
                     </ul>
                 </div>
             </div>
@@ -105,164 +104,91 @@ if(!empty($user_first_name)){
         </section>
         <!-- Page Title End -->
 
-        <!-- Find Section Start -->
-        <div class="find-section ptb-100">
+		<!-- Jobs Section Start -->
+        <section class="job-style-two job-list-section pt-100 pb-70">
             <div class="container">
-                <form class="find-form mt-0">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Job Title or Keyword">
-                                <i class="bx bx-search-alt"></i>
-                            </div>
-                        </div>
-    
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Location">
-                                <i class="bx bx-location-plus"></i>
-                            </div>
-                        </div>
-
-						<?php
-                        $sql = "SELECT name FROM category ORDER BY name ASC";
-                        $query = $conn->query($sql);
-
-                        ?>
-
-                        <div class="col-lg-3">
-                            <select class="category">
-
-                                <option data-display="Category">Category</option>
-                                
-                                                    <?php
-                                                    while ($data = mysqli_fetch_array($query)) {
-                                                        $category_id = $data['id'];
-                                                        $category_name = $data['name'];
-
-                                                        echo "<option value='$category_name'>$category_name</option>";
-                                                    }
-                                                    ?>
-                            </select>
-                        </div>
-   
-                        <div class="col-lg-3">
-                            <button type="submit" class="find-btn">
-                                Find A Job
-                                <i class='bx bx-search'></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- Find Section End -->
-    
-        <!-- Job Category Section Start -->
-        <div class="category-style-two pb-70"> 
-            <div class="container">
-                <div class="section-title">
-                    <h2>Popular Jobs Category</h2>
-                    <p>Our web-site aims to explore maximum benefits of the Internet. We believe our service will help the job seekers manage their career more efficiently.</p>
+                <div class="section-title text-center">
+                    <h2>Jobs You May Be Interested In</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
                 </div>
-
-				
 
                 <div class="row">
-				<?php
-                $sql = $conn->query("SELECT c.name, COUNT(v.category_count) AS category_count FROM category c LEFT JOIN vacancy v ON c.id = v.catagory_id GROUP BY c.id ORDER BY name ASC");
+                    <?php
+                    $id = $_REQUEST['category_id'];
 
-               while($row = $sql->fetch_assoc()){
-                
-                ?>
-                    <div class="col-lg-3 col-sm-6">
-                        <a href="job-list_category.php?category_id=<?php echo $row ['name'] ?>">
-                            <div class="category-item">
-                                <i class="flaticon-wrench-and-screwdriver-in-cross"></i>
-                                <h3><?php echo $row['name'] ?></h3>
-                                <p><?php echo $row['category_count']." Open position"; ?></p>
+                    $sql =$conn->query ("SELECT vacancy.id,vacancy.job_title,vacancy.category,vacancy.salary,vacancy.address,vacancy.last_date,vacancy.job_type FROM vacancy,category WHERE vacancy.category='$id' AND vacancy.catagory_id=category.id");
+
+                    while($row = $sql->fetch_assoc()){
+                    
+                    
+                    ?>
+                    <div class="col-lg-12">
+                        <div class="job-card-two">
+                            <div class="row align-items-center">
+                                <div class="col-md-1">
+                                    
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="job-info">
+                                        <h3>
+                                            <a href="job_details.php?id=<?php echo $row['id']?>"><?php echo $row['job_title'] ?></a>
+                                        </h3>
+                                        <ul>                                          
+                                            <li>
+                                                <i class='bx bx-briefcase' ></i>
+                                                <?php echo $row['category'] ?>
+                                            </li>
+                                            <li>
+                                                <i class='bx bx-briefcase' ></i>
+                                                <?php echo $row['salary'] ?>
+                                            </li>
+                                            <li>
+                                                <i class='bx bx-location-plus'></i>
+                                                <?php echo $row['address'] ?>
+                                            </li>
+                                            <li>
+                                                <i class='bx bx-stopwatch' ></i>
+                                                <?php echo $row['last_date'] ?>
+                                            </li>
+                                        </ul>
+
+                                        <span><?php echo $row['job_type'] ?></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="theme-btn text-end">
+                                        <a href="job_details.php?id=<?php echo $row['id']?>" class="default-btn">
+                                            Browse Job
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
 <?php } ?>
-                   
+                    
                 </div>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                <i class='bx bx-chevrons-left bx-fade-left'></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link active" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class='bx bx-chevrons-right bx-fade-right'></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-        <!-- Job Category Section End -->
-
-		<!-- Jobs Section Start -->
-		<section class="job-section pb-70">
-			<div class="container">
-				<div class="section-title text-center">
-					<h2>Jobs You May Be Interested In</h2>
-					<p>Our web-site aims to explore maximum benefits of the Internet. We believe our service will help the job seekers manage their career more efficiently.  Our web-site aims to explore maximum benefits of the Internet.</p>
-				</div>
-				
-				<div class="row">
-				<?php
-                $sql = $conn->query("SELECT * FROM vacancy");
-
-               while($row = $sql->fetch_assoc()){
-                
-                ?>
-					<div class="col-md-6">
-						<div class="job-card">
-							<div class="row align-items-center">
-								<div class="col-lg-3">
-									<div class="thumb-img">
-										<a href="job-details.html">
-											
-										</a>
-									</div>
-								</div>
-							
-
-								<div class="col-lg-6">
-									<div class="job-info">
-										<h3>
-											<a href="job_details.php?id=<?php echo $row['id']  ?>"><?php echo $row['job_title'] ?></a>
-										</h3>
-										<ul>
-											<li>Via <a href="#"><?php echo $row['company_name'] ?></a></li>
-											<li>
-												<i class='bx bx-location-plus'></i>
-												<?php echo $row['address'] ?>
-											</li>
-											<li>
-												<i class='bx bx-filter-alt' ></i>
-												<?php echo $row['category'] ?>
-											</li>
-											<li>
-												<i class='bx bx-briefcase' ></i>
-												<?php echo $row['website'] ?>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="col-lg-3">
-									<div class="job-save">
-										<span>Full Time</span>
-										<a>
-											<p>Last Date :</p>
-										</a>
-										<p>
-										<?php echo $row['last_date'] ?>
-
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<?php } ?>
-				</div>
-				
-			</div>
-			
-		</section>
-		
-		<!-- Jobs Section End -->
+        </section>
+		<!-- Jobs Section End -->        
     
         <!-- Subscribe Section Start -->
         <section class="subscribe-section">

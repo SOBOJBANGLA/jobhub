@@ -122,7 +122,7 @@ if(!empty($user_first_name)){
                 
                 ?>
 					<div class="col-lg-3 col-md-4 col-sm-6">
-						<a href="#">
+						<a href="job-list_category.php?category_id=<?php echo $row ['name'] ?>">
 						<div class="category-card">
 							<i class='flaticon-accounting'></i>
 							<h3><?php echo $row['name'] ?></h3>
