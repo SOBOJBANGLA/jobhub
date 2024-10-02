@@ -195,19 +195,19 @@ if(!empty($user_first_name)){
                                                 <table class="table">
                                                     <tbody>
                                                         <tr>
-                                                            <td><span>Company: </span></td>
+                                                            <td><span>Company: &nbsp; </span></td>
                                                             <td><?php echo $data['company_name']  ?></td>
                                                         </tr>
                                                         <tr>
-                                                            <td><span>Location: </span></td>
+                                                            <td><span>Location: &nbsp; </span></td>
                                                             <td><?php echo $data['address']  ?></td>
                                                         </tr>
                                                         <tr>
-                                                            <td><span>Job Type</span></td>
+                                                            <td><span>Job Type: &nbsp; </span></td>
                                                             <td>Full Time</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><span>Email: </span></td>
+                                                            <td><span>Email: &nbsp; </span></td>
                                                             <td><a href="mailto:<?php echo $data['email']  ?>"><?php echo $data['email']  ?></a></td>
                                                         </tr>
                                                     </tbody>
@@ -217,19 +217,19 @@ if(!empty($user_first_name)){
                                                 <table class="table">
                                                     <tbody>
                                                         <tr>
-                                                            <td><span>Experince</span></td>
+                                                            <td><span>Experince: &nbsp;</span></td>
                                                             <td>2 Years</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><span>Language</span></td>
+                                                            <td><span>Language: &nbsp;</span></td>
                                                             <td>English</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><span>Salary: </span></td>
+                                                            <td><span>Salary: &nbsp;</span></td>
                                                             <td><?php echo $data['salary']  ?></td>
                                                         </tr>
                                                         <tr>
-                                                            <td><span>Website: </span></td>
+                                                            <td><span>Website: &nbsp;</span></td>
                                                             <td><a href="#"><?php echo $data['website']  ?></a></td>
                                                         </tr>
                                                     </tbody>

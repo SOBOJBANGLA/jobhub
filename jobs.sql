@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3310
--- Generation Time: Oct 01, 2024 at 01:07 PM
+-- Host: 127.0.0.1
+-- Generation Time: Oct 02, 2024 at 03:13 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -52,10 +52,9 @@ CREATE TABLE `applicant` (
 --
 
 INSERT INTO `applicant` (`id`, `title`, `company_name`, `fname`, `lname`, `gender`, `birth`, `education`, `email`, `contact`, `experience`, `skill`, `address`, `about`, `resume`, `photo`, `status`) VALUES
-(1, 'As. Officer', 'Square LTD', 'Abdullah', 'Rashid', 'Male', '2024-09-24', 'Masters', 'mamun@gmail.com ', '45555665', '2', 'ddd', 'aaaaaaa', 'dddddd', 'resume/jQuery STC version.pdf', 'photo/man2.jpg', 'Approved'),
-(2, 'Junior oficer', 'Square LTD', 'Abdullah', 'sani', 'Male', '2024-09-11', 'Masters', 'abuhmdabdullah@gmail.com', '45555665', '2', 'ddd', 'fffff', 'ddddd', 'resume/jQuery STC version.pdf', 'photo/man4 (1).jpg', 'Pending'),
-(3, 'Manager', 'Candid Dealings ltd', 'Abdullah', 'Rashid', 'Male', '2024-09-24', 'S.S.C', 'abuhmdabdullah72@gmail.com', '45555', '2', 'qqq', 'bbbg', 'ffff', 'resume/DUTCH BANGLA.pdf', 'photo/man3 (1).jpg', 'Approved'),
-(4, 'Junior oficer', 'Square LTD', 'Saif', 'Jahan', 'Male', '2024-09-17', 'Masters', 'saif@gmail.com', '45555665', '2', 'aaaa', 'qqqq', 'rrrr', 'resume/JOBSHUB.pptx', 'photo/g4.gif', 'Approved');
+(2, 'Junior oficer', 'Square LTD', 'Abdullah', 'sani', 'Male', '2024-09-11', 'Masters', 'abuhmdabdullah@gmail.com', '45555665', '2', 'ddd', 'fffff', 'ddddd', 'resume/jQuery STC version.pdf', 'photo/man4 (1).jpg', 'Approved'),
+(10, 'Junior operator', 'Csl ltd', 'Arif', 'Billah', 'Male', '2024-10-01', 'Masters', 'abuhmdabdullah72@gmail.com', '45555665', '2', 'ddd', 'eee', 'sss', 'resume/A S M ABDULLAH (1) (2) (1).pdf', 'photo/man2.jpg', 'Approved'),
+(16, 'Data operator', 'City Ltd', 'Abir', 'Khan', 'Male', '2024-10-02', 'Masters', 'abuhmdabdullah72@gmail.com', '5555', '0', 'qqq', 'dff', 'sdd', 'resume/A S M ABDULLAH (1) (2) (1).pdf', 'photo/man8 (1).jpg', 'Approved');
 
 -- --------------------------------------------------------
 
@@ -76,7 +75,6 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `name`, `date`, `psition`) VALUES
 (1, 'Accountacy', '2024-09-09', '5 Open Position'),
-(3, 'Bank', '2024-09-10', '10 position'),
 (6, 'Agriculture', '2024-09-10', '5 open position'),
 (7, 'Hospitality', '2024-09-11', '2 Open Position'),
 (8, 'N.G.O', '2024-09-11', ''),
@@ -85,7 +83,8 @@ INSERT INTO `category` (`id`, `name`, `date`, `psition`) VALUES
 (23, 'Audit', '2024-09-16', ''),
 (24, 'Commercial ', '2024-09-18', ''),
 (25, 'Customer service', '2024-09-15', ''),
-(28, 'Law', '2024-09-23', '');
+(28, 'Law', '2024-09-23', ''),
+(29, 'Bank', '2024-10-01', '');
 
 -- --------------------------------------------------------
 
@@ -108,8 +107,6 @@ CREATE TABLE `company` (
 INSERT INTO `company` (`id`, `name`, `address`, `date`, `position`) VALUES
 (2, 'Candid Dealings ltd', 'Dhaka,Bangladeshh', '2024-09-05', '6 Open Position'),
 (3, 'Basundhara Ltd', 'Dhaka', '2024-09-09', '10 Open Position'),
-(5, 'City', 'hhhv', '2024-09-09', '10 Open Position'),
-(8, 'Cocacola', 'Cumilla', '2024-09-09', '5 Open Position'),
 (12, 'Asha ltd', 'Cumilla', '2024-09-10', '5 Open Position'),
 (13, 'Square LTD', 'Dhaka', '2024-09-05', '10 position'),
 (14, 'Bargar Color paint ltd', 'Dhaka', '2024-09-16', '5 Open Position'),
@@ -117,10 +114,10 @@ INSERT INTO `company` (`id`, `name`, `address`, `date`, `position`) VALUES
 (22, 'Dhanshiri Ltd', 'Dhaka', '2024-09-11', ''),
 (32, 'Csl ltd', 'Dhaka', '2024-09-11', ''),
 (33, 'Samsung Ltd', 'Dhaka', '2024-09-08', ''),
-(66, 'Bsb ltd', 'Dhaka', '2024-09-09', ''),
 (67, 'HAMIM GROUPP', 'DHAKA,BANGLADESH', '2024-09-15', ''),
 (69, 'Walton Ltd', 'Dhaka', '2024-09-21', ''),
-(70, 'Huway Ltd', 'Dhaka', '2024-09-15', '');
+(70, 'Huway Ltd', 'Dhaka', '2024-09-15', ''),
+(71, 'City Ltd', 'Dhaka', '2024-10-01', '');
 
 -- --------------------------------------------------------
 
@@ -143,14 +140,14 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `name`, `email`, `number`, `subject`, `massage`) VALUES
 (1, 'Amir', 'abdullah@gmail.com', '44444', 'subjec', 'fffffffff'),
-(28, 'salam', 'saif@gmail.com', '45623', 'subjec', 'kkkk'),
 (32, 'Hasib', 'sm@gmail.com', '55555', 'aaaaaaa', 'aaaaaa'),
 (38, 'Nazrul khan', 'abdullah@gmail.com', '5566332', 'subjec', 'ghjj'),
 (41, 'Mamun', 'abuhmdabdullah@hhh.com', '45522', 'kkkk', 'lllll'),
 (44, 'Mamun', 'mamun@gmail.com', '01256486317', 'Impression', 'Good'),
 (45, 'Samir', 'mamun@gmail.com', '444444444', 'gggg', 'aaaaaaaa'),
 (46, 'Hamim', 'mamun@gmail.com', '250012', 'subjec', 'aaaa'),
-(47, 'Hamim', 'mamun@gmail.com', '250012', 'subjec', 'aaaa');
+(47, 'Hamim', 'mamun@gmail.com', '250012', 'subjec', 'aaaa'),
+(48, 'Salam Jahan', 'sm@gmail.com', '01254669', 'ddssw', 'ddsxx');
 
 -- --------------------------------------------------------
 
@@ -192,14 +189,14 @@ CREATE TABLE `title` (
 INSERT INTO `title` (`id`, `name`, `date`) VALUES
 (1, 'Assistant officer', '2024-09-11'),
 (3, 'Sr. Officer', '2024-09-09'),
-(4, 'As. Officer', '2024-09-16'),
 (6, 'Junior operator', '2024-09-18'),
 (7, 'Tellar', '2024-09-03'),
 (8, 'Driver', '2024-09-17'),
 (9, 'Data operator', '2024-09-11'),
 (15, 'Manager', '2024-09-09'),
 (16, 'Executive', '2024-09-15'),
-(17, 'General Manager', '2024-09-23');
+(17, 'General Manager', '2024-09-23'),
+(18, 'Cashier', '2024-10-01');
 
 -- --------------------------------------------------------
 
@@ -230,7 +227,8 @@ INSERT INTO `user1` (`id`, `fname`, `lname`, `email`, `password`) VALUES
 (39, 'Rahid', '', 'rahid@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
 (40, 'A.S.M Abdullah', '', 'asm@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
 (41, 'Abdul Rahim', '', 'abdurrahim@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
-(42, 'Nihan', '', 'nihan@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b');
+(42, 'Nihan', '', 'nihan@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(43, 'Mainul hasan', '', 'mamun@gmail.com', '8a13dab3f5ec9e22d0d1495c8c85e436');
 
 -- --------------------------------------------------------
 
@@ -287,8 +285,8 @@ CREATE TABLE `vacancy` (
 --
 
 INSERT INTO `vacancy` (`id`, `job_title`, `salary`, `company_name`, `address`, `category`, `start_date`, `last_date`, `email`, `website`, `job_type`, `company_id`, `vacancy_count`, `catagory_id`, `category_count`, `description`) VALUES
-(20, 'Junior oficer', '', 'Square LTD', 'Dhaka', 'Accountacy', '2024-09-04', '2024-09-27', '', 'www.squre.com', '', 13, 0, 1, 0, ''),
-(36, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Customer service', '2024-09-09', '2024-09-21', '', '', '', 2, 1, 25, 0, ''),
+(20, 'Junior oficer', '', 'Square LTD', 'Dhaka', 'Accountacy', '2024-09-28', '2024-09-27', '', 'www.squre.com', '', 13, 0, 1, 0, ''),
+(36, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-27', '2024-10-09', '', '', '', 2, 1, 1, 0, ''),
 (37, 'Manager', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-23', '', '', '', 2, 1, 6, 0, ''),
 (38, 'As. Officer', '', 'Square LTD', 'Dhaka', 'Accountacy', '2024-09-10', '2024-09-20', '', '', '', 13, 0, 1, 0, ''),
 (45, 'Tellar', '', 'Dhanshiri Ltd', 'Dhaka', 'N.G.O', '2024-09-10', '2024-09-28', '', '', '1', 22, 1, 8, 8, ''),
@@ -296,17 +294,18 @@ INSERT INTO `vacancy` (`id`, `job_title`, `salary`, `company_name`, `address`, `
 (49, 'Junior operator', '', 'Csl ltd', 'Dhaka', 'Management', '2024-09-15', '2024-09-21', '', '', 'Full Time', 32, 1, 10, 1, ''),
 (50, 'As. Officer', '', 'Csl ltd', 'Dhaka', 'Accountacy', '2024-09-17', '2024-09-28', '', '', 'Full Time', 32, 1, 1, 1, ''),
 (51, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-15', '2024-09-28', '', '', 'Full Time', 2, 1, 1, 1, ''),
-(52, 'Tellar', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-08', '2024-09-26', '', '', 'Full Time', 2, 1, 1, 1, ''),
 (53, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-10', '', '', 'Full Time', 2, 1, 6, 1, ''),
 (54, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Agriculture', '2024-09-15', '2024-09-10', '', '', 'Full Time', 2, 1, 6, 1, ''),
 (55, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Hospitality', '2024-09-10', '2024-09-28', '', '', 'Full Time', 1, 1, 7, 1, ''),
 (56, 'As. Officer', '', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-19', '2024-09-28', '', '', 'Full Time', 2, 1, 1, 1, ''),
-(57, 'As. Officer', '', 'City', 'Dhaka', 'Agriculture', '2024-09-16', '2024-09-27', '', '', 'Full Time', 5, 1, 6, 1, ''),
 (58, 'Assistant officer', '', 'Candid Dealings ltd', 'Dhaka', 'Management', '2024-09-17', '2024-09-28', '', '', 'Full Time', 2, 1, 10, 1, ''),
 (59, 'Assistant officer', '', 'Walton Ltd', 'Dhaka', 'Accountacy', '2024-09-18', '2024-09-27', '', '', 'Full Time', 69, 1, 1, 1, ''),
 (67, 'General Manager', '', 'Huway Ltd', 'Dhaka', 'Law', '2024-09-22', '2024-09-30', '', '', 'Full Time', 70, 1, 28, 1, ''),
 (68, 'As. Officer', '20000', 'Candid Dealings ltd', 'Dhaka', 'Accountacy', '2024-09-25', '2024-09-28', 'candid@gmail.com', 'www.candid.com', 'Full Time', 2, 1, 1, 1, 'aaaaa'),
-(69, 'Executive', '20000', 'Basundhara Ltd', 'Dhaka', 'Accountacy', '2024-09-23', '2024-10-02', 'sm@gmail.com', 'www.squre.com', 'Full Time', 3, 1, 1, 1, 'ccccdd');
+(69, 'Executive', '20000', 'Basundhara Ltd', 'Dhaka', 'Accountacy', '2024-09-23', '2024-10-02', 'sm@gmail.com', 'www.squre.com', 'Full Time', 3, 1, 1, 1, 'ccccdd'),
+(70, 'Cashier', '20000', 'City Ltd', 'Dhaka', 'Bank', '2024-10-02', '2024-10-10', 'sm@gmail.com', 'www.candid.com', 'Full Time', 71, 1, 29, 1, 'ccsddf'),
+(71, 'Executive', '20000', 'City Ltd', 'Dhaka', 'Management', '2024-10-01', '2024-10-10', 'mamun@gmail.com', 'www.squre.com', 'Full Time', 71, 1, 10, 1, 'jjggf'),
+(72, 'Data operator', '20000', 'City Ltd', 'Dhaka', 'Accountacy', '2024-10-02', '2024-10-11', 'mamun@gmail.com', 'www.squre.com', 'Full Time', 71, 1, 1, 1, 'ffdf');
 
 --
 -- Indexes for dumped tables
@@ -374,43 +373,43 @@ ALTER TABLE `vacancy`
 -- AUTO_INCREMENT for table `applicant`
 --
 ALTER TABLE `applicant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `title`
 --
 ALTER TABLE `title`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user1`
 --
 ALTER TABLE `user1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -422,7 +421,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `vacancy`
 --
 ALTER TABLE `vacancy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

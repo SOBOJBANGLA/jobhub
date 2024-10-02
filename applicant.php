@@ -223,11 +223,11 @@ $row = $sql->fetch_object();
                     <h2>Fill Up Your information</h2>
                     <div class="row">
                     <div class="col-md-6">
-                 <p name="<?php echo $row->job_title ?>">  Apply for:<?php echo $row->job_title ?></p>
+                 <p name="<?php echo $row->job_title ?>">  <b>Apply for :</b> <?php echo $row->job_title ?></p>
                         </div>
                         
                         <div class="col-md-6">
-                        <p name="<?php echo $row->company_name ?>"> Company Name: <?php echo $row->company_name ?></p>
+                        <p name="<?php echo $row->company_name ?>"> <b>Company Name :</b> <?php echo $row->company_name ?></p>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">

@@ -25,9 +25,9 @@
 							<h3>For Candidate</h3>
 							<ul>
 								<li>
-									<a href="job_grid.html">
+									<a href="job_grid.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
-										Browse Jobs
+										Browse jobs
 									</a>
 								</li>
 								<li>

@@ -232,7 +232,7 @@ require('connection.php');
                         <label for="exampleFormControlSelect1"> Status</label>
               <select class="form-control" name="status" id="exampleFormControlSelect1">
                 <option>Approved</option>
-                <option>Pending</option>
+                <!-- <option>Pending</option> -->
                 
               </select>
                         </div>

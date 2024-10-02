@@ -25,31 +25,31 @@
 							<h3>For Candidate</h3>
 							<ul>
 								<li>
-									<a href="job-grid.html">
+									<a href="job_grid.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Browse Jobs
 									</a>
 								</li>
 								<li>
-									<a href="account.html">
+									<a href="find_job.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
-										Account
+										Jobs
 									</a>
 								</li>
 								<li>
-									<a href="catagories.html">
+									<a href="catagories.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Browse Categories
 									</a>
 								</li>
 								<li>
-									<a href="resume.html">
+									<a href="find_job.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
-										Resume
+										Find a job
 									</a>
 								</li>
 								<li>
-									<a href="job-list.html">
+									<a href="job_grid.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Job List
 									</a>
@@ -69,37 +69,37 @@
 							<h3>Quick Links</h3>
 							<ul>
 								<li>
-									<a href="index.html">
+									<a href="index.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Home
 									</a>
 								</li>
 								<li>
-									<a href="about.html">
+									<a href="about.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										About
 									</a>
 								</li>
 								<li>
-									<a href="faq.html">
+									<a href="find_job.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
-										FAQ
+										Jobs
 									</a>
 								</li>
 								<li>
-									<a href="pricing.html">
+									<a href="company.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
-										Pricing
+										Company
 									</a>
 								</li>
 								<li>
-									<a href="privacy.html">
+									<a href="blog.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
-										Privacy
+										Job News
 									</a>
 								</li>
 								<li>
-									<a href="contact.html">
+									<a href="contact.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Contact
 									</a>

@@ -121,11 +121,11 @@ require('connection.php');
                                     echo "Not updated";
                                 }*/
                             }
-
-
-                            $sql = $conn->query("SELECT * FROM applicant WHERE id='$id'");
+                           
+                            
+                                $sql = $conn->query("SELECT * FROM applicant WHERE id='$id'");
                                 $row = $sql->fetch_assoc();
-
+                                
                             ?>
                            
 
@@ -169,7 +169,7 @@ require('connection.php');
                     <h5 class="mb-0">Decision</h5>
                   </div>
                   <div class="card-body p-4">
-                  <form class="job-post-from" method="post" >
+                  <form action="send.php" class="job-post-from" method="post" >
                     <h2>Applicant information</h2>
                     <div class="row">
                     <div class="col-md-6">
@@ -237,12 +237,31 @@ require('connection.php');
                         <label for="exampleFormControlSelect1"> Status</label>
               <select class="form-control" name="status" id="exampleFormControlSelect1">
                 <option>Approved</option>
-                <option>Pending</option>
+                <!-- <option>Pending</option> -->
                 
               </select>
                         </div>
                         </div>
 
+                        <div class="col-md-12">
+                        <div class="form-group">
+                        <label for="exampleFormControlSelect1">Email Subject</label>
+              <select class="form-control" name="stat" id="exampleFormControlSelect1">
+                <option>Approved</option>
+                <!-- <option>Pending</option> -->
+                
+              </select>
+                        </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Message</label>
+                                <textarea class="form-control description-area" name="msz" id="exampleFormControlTextarea1" rows="5" ></textarea>
+                            </div>
+                        </div>
+
+                        
                         <div class="col-md-12 text-center">
                             <button type="submit" name="submit"  class="post-btn">
                                 Submit Application

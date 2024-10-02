@@ -179,7 +179,7 @@ if (!empty($user_first_name) && !empty($user_last_name)) {
                             <td><?php if($data->status == "Pending"){ echo '<span class = "badge badge-warning">'.$data->status.'</span>'; } else { echo '<span class = "badge badge-success">'.$data->status.'</span>';}?></td>
                             <td>
                             <a href="decision_approve.php?id=<?php echo $data->id;?>" class="badge badge-success"><i class = "fa fa-check"></i> Approve</a>
-                            <a href="decision_approve_delete.php?id=<?php echo $data->id;?>" class="badge badge-danger"><i class ="fa fa-trash"></i> Denied</a>
+                            <a onclick="return confirm('Are you sure to delete?')" href="decision_approve_delete.php?id=<?php echo $data->id;?>" class="badge badge-danger"><i class ="fa fa-trash"></i> Delete</a>
                             </td>
 
                           </tr>

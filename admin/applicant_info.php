@@ -153,6 +153,7 @@ if (!empty($user_first_name) && !empty($user_last_name)) {
                           <th>Contact</th>
                           <th>Experience</th>
                           <th>Skill</th>
+                          <th>Resume</th>
                           <th>Action</th>
 
                         </tr>
@@ -175,6 +176,7 @@ if (!empty($user_first_name) && !empty($user_last_name)) {
                             <td> <?php echo $data->contact  ?></td>
                             <td> <?php echo $data->experience  ?></td>
                             <td> <?php echo $data->skill  ?></td>
+                            <td><?php echo "<a href='../$data->resume'>$data->resume</a>"  ?></td>
                            
                             <td>
                               <div class="button-items">
@@ -182,7 +184,7 @@ if (!empty($user_first_name) && !empty($user_last_name)) {
                         <i class="fa fa-clipboard"></i> 
                             Decision
                       </a>
-                      <a href="decision_delete.php?id=<?php echo $data->id;?>" class="badge badge-danger"><i class ="fa fa-trash"></i> Delete</a> 
+                      <a onclick="return confirm('Are you sure to delete?')" href="decision_delete.php?id=<?php echo $data->id;?>" class="badge badge-danger"><i class ="fa fa-trash"></i> Delete</a> 
 
                               </div>
                             </td>
